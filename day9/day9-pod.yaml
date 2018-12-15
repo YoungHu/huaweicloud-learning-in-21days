@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cce21days-app5-pod-huyong5802
+  labels:
+    app: cce21days-app5-pod-huyong5802
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+              - 192.168.0.148
+  containers:
+  - image: nginx:latest
+    imagePullPolicy: IfNotPresent
+    name: container-0
+  restartPolicy: Always
+  schedulerName: default-scheduler

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: cce21days-app5-svc-huyong5802
+  name: cce21days-app5-svc-huyong5802
+spec:
+  ports:
+  - name: service0
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: cce21days-app5-pod-huyong5802
+  type: NodePort
